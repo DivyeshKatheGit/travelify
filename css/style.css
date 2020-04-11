@@ -1,0 +1,849 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+-moz::selection
+{
+    background-color: #ff5f5f;
+    color: black;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header
+{
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header nav
+{
+    height: 10vh;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    color: #ff5f5f;
+}
+.nav-brand
+{
+    margin-left: 100px;
+}
+.nav-items ul
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+}
+.nav-social ul
+{
+    display: flex;
+    list-style: none;
+}
+.nav-items ul li
+{
+    margin: 20px 13px;
+    font-size: 1.15rem;
+}
+.nav-items ul li a,.nav-social ul li a
+{
+    color: whitesmoke;
+    text-decoration: none;
+}
+.nav-social ul li
+{
+    margin: 0 20px;
+    font-size: 1.6rem;
+}
+nav .nav-list
+{
+    position: absolute;
+    top: 10vh;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 90vh;
+    z-index: 1;
+    background-color: #00000062;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+}
+nav .nav-active
+{
+    transform: translateX(0%);
+    z-index: 10;
+}
+.nav-list .cross
+{
+    position: absolute;
+    top: 3%;
+    right: 8%;
+    cursor: pointer;
+}
+.nav-list .cross .fas
+{
+    color: white;
+    font-size: 1.8rem;
+}
+
+@keyframes navlinkfade
+{
+    from
+    {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+    to
+    {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+nav .burger
+{
+    display: block;
+    cursor: pointer;
+    margin-right: 100px;
+}
+nav .burger .line
+{
+    width: 45px;
+    height: 4px;
+    background-color: #ff5f5f;
+    margin: 4px 0;
+    transition: .5s;
+}
+ .corousel
+ {
+     position: relative;
+     width: 100%;
+     height: 90vh;
+     margin-top: 10vh;
+     overflow: hidden;
+ }
+ .corousel .btn
+ {
+     position: absolute;
+     width: 50px;
+     height: 50px;
+     top: 50%;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 1.2rem;
+     color: whitesmoke;
+     background-color: rgba(0,0,0,.5);
+ }
+ .corousel .btn:hover
+ {
+     background-color: rgba(0,0,0,.8);
+ }
+ .corousel .btn.prev
+ {
+     left: 1%;
+     transform: translateY(-50%);
+ }
+ .corousel .btn.next
+{
+    right: 1%;
+    transform: translateY(-50%);
+}
+ .corousel .slide
+ {
+     width: 100%;
+     height: 100%;
+     background-size: cover;
+     background-position: center;
+ }
+ .corousel .slide .content
+ {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-direction: column;
+     width: 100%;
+     height: 100%;
+     color: whitesmoke;
+ }
+ .corousel .content h2
+ {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 100px;
+ }
+ .corousel .content p
+{
+    font-size: 1.6rem;
+    padding: 0 100px;
+    text-align: center;
+}
+.corousel .slide .content .book
+{
+    width: 240px;
+    height: 70px;
+    background-color: #ff5f5f;
+    text-align: center;
+}
+.corousel .slide .content .book h4
+{
+    line-height: 70px;
+    font-size: 1.1rem;
+}
+ .corousel .slide-1
+ {
+     background-image: url(../assets/slide-1.jpg);
+ }
+.corousel .slide-2
+{
+    background-image: url(../assets/slide-2.jpg);
+    display: none;
+}
+.corousel .slide-3
+{
+    background-image: url(../assets/slide-3.jpg);
+    display: none;
+}
+
+/* Places*/
+.places .places-row
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.places .place
+{
+    width: 350px;
+    height: 440px;
+    margin: 30px 15px 20px;
+    z-index: 10;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    background-size: cover;
+}
+.places .place h3
+{
+    font-size: 1rem;
+    color: whitesmoke;
+    font-weight: 700;
+    display: block;
+    transition: .8s;
+}
+.places .place.place-1
+{
+    background-image: url(../assets/place-1.jpg);
+}
+.places .place.place-2
+{
+    background-image: url(../assets/place-2.jpg);
+}
+.places .place.place-3
+{
+    background-image: url(../assets/place-3.jpg);
+}
+.place:hover h3
+{
+    transform: translateY(-12px);
+}
+.booking,.services-row
+{
+    width:100%;
+    height:auto;
+    display: flex;
+    justify-content: center;
+    margin: 100px 0 50px;
+}
+.booking .same,.services .s-card
+{
+    width: 300px;
+    height: 300PX;
+    color:whitesmoke ;
+    margin: 0 45px;
+    color: black;
+        
+}
+.booking .same .fa , .services .s-card .fa
+{
+    font-size: 3rem;
+    float: left;
+    margin-right: 10px;
+    color: #ff5f5f;
+        
+}
+.booking .same>h3 , .services .s-card>h3
+{
+    font-size: 1rem;
+    line-height: 3rem;
+    color: black !important;
+}
+.booking .same p , .services .s-card p , .blogs .blogs-row .b-card p
+{
+    color: #676767;
+    font-weight: 100;
+    text-align: left;
+}
+.booking .same a , .services .s-card a
+{
+    position: relative;
+    color: #ff5f5f;
+    text-decoration: none; 
+    padding-bottom: 5px;  
+}
+.booking .same a::before , .services .s-card a::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #ff5f5f;
+    transition: width 1s;
+}
+.booking .same a:hover::before , .services .s-card a:hover::before
+{
+    width: 100%;
+}
+
+.testimonials
+{
+    width: 100%;
+    background-color: #efefef;
+    padding: 100px 0;
+    position: relative;
+}
+.testimonials h2
+{
+    text-align: center;
+    margin: 0 0 100px;
+}
+.testimonials .t-card
+{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    margin: 50px 0;
+}
+.testimonials .t-card .t-img
+{
+    width: 550px;
+    height: 600px;
+    background-size: cover;
+}
+.testimonials .t-card .t1
+{
+    background-image: url(../assets/place-1.jpg);
+}
+.testimonials .t-card .t2
+{
+    background-image: url(../assets/place-2.jpg);
+}
+.testimonials .t-card .t3
+{
+    background-image: url(../assets/place-3.jpg);
+}
+.testimonials .t-card .t-text
+{
+    padding: 100px;
+    width: 550px;
+    height: 520px;
+    background-color: whitesmoke;
+    margin-top: 60px;
+    margin-left: -60px;
+}
+.testimonials .t-card .t-text h4
+{
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    color: #9a9a9a;
+}
+.testimonials .t-card .t-text #author
+{
+    font-style: italic;
+    font-size: 1.3rem;
+}
+.testimonials .t-card .t-text #author span
+{
+    color: #ff5f5f;
+}
+.testimonials .Testi-card
+{
+    display: none;
+}
+.testimonials .Testi-card:nth-child(1)
+{
+    display: block;
+}
+.testimonials .testibtn
+{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+.testimonials .testibtn .fa
+{
+    font-size: 1.3rem;
+    color: #ff5f5f;
+    cursor: pointer;
+}
+.testimonials .nextTesti
+{
+    left: 53%;
+}
+.testimonials .prevTesti
+{
+    left: 47%;
+}
+
+@keyframes testi
+{
+    from
+    {
+        transform: translateX(300px);
+    }
+    to
+    {
+        transform: translateX(0);
+    }
+}
+
+.destination , .services , .blogs
+{
+    padding: 80px 0;
+}
+.destination .desti-row , .blogs-row
+{
+    display: flex;
+    justify-content: center;
+}
+.destination .desti-row .desti-card , .blogs .blogs-row .b-card
+{
+    position: relative;
+    margin: 30px 10px;
+    color: whitesmoke;
+    overflow: hidden;
+}
+.destination>h2 , .services>h2 , .blogs>h2 , .travel h2
+{
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+    
+}
+.destination>h3 , .services>h3 ,.blogs>h3
+{
+    font-size: 1.1rem;
+    color: #9a9a9a;
+    text-align: center;
+
+}
+.destination .desti-row .desti-card img 
+{
+    width: 400px;
+    height: 450px;
+    transition: .6s;
+}
+.destination .desti-row .desti-card:hover img
+{
+    transform: scale(1.1);
+}
+.destination .desti-row .desti-card h3
+{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 1px;
+    z-index: 1;
+    color: whitesmoke;
+    margin-top: 10px;
+}
+.destination .desti-row .desti-card p
+{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.service-back
+{
+    width: 100%;
+    height: 80vh;
+    background-image: url(../assets/slide-3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.service-back .service-back-text
+{
+    width: 100%;
+    height: 40vh;
+    text-align: center;
+    padding:  100px;
+}
+.service-back .service-back-text h1
+{
+    color: whitesmoke;
+    font-size: 4rem;
+}
+
+.blogs , .travel
+{
+    text-align: center;
+}
+
+.blogs .blogs-row .b-card
+{
+    width: 40%;
+    color: black;
+    margin: 80px 30px;
+}
+.blogs .blogs-row .b-card h3
+{
+    color: #ff5f5f;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    text-align: left;
+}
+.blogs .blogs-row .b-card h4
+{
+    font-size: 1rem;
+    color: #ababab;
+    text-align: left;
+}
+.blogs .blogs-row .b-card img
+{
+    width: 600px;
+    height: 500px;
+}
+.blogs>a , .travel>a
+{
+    background-color: white;
+    color: #ff5f5f;
+    padding: 20px 60px;
+    border: 2px solid #ff5f5f;
+    text-decoration: none;
+    transition: .3s;
+    margin: 10px 0;
+    display: inline-block;
+}
+.blogs>a:hover , .travel>a:hover
+{
+    background-color: #ff5f5f;
+    color: white;
+}
+.travel
+{
+    padding-bottom: 50px;
+}
+.travel>h2
+{
+    padding: 40px;
+    font-size: 2rem;
+}
+
+footer
+{
+    padding: 100px 100px 50px;
+    background-color: #232323;
+    color: white;
+    width: 100%;
+}
+footer .footer-text
+{
+    display: flex;
+    justify-content: center;
+}
+footer .f-card
+{
+    width: 500px;
+    margin: 0px 20px 50px;
+}
+footer .f-card.subscribe button
+{
+    background-color: #ff5f5f;
+    border: 2px solid white;
+    padding: 0 15px;
+    color: white;
+}
+footer .follow
+{
+    text-align: center;
+}
+footer .follow li
+{
+    display: inline;    
+    margin: 0 20px;
+}
+footer .follow li .fab
+{
+    color: #ababab;
+}
+
+
+/* Responsive */
+
+@media screen and (max-width : 992px)
+{
+   body
+   {
+       overflow-x: hidden;
+   }
+   .nav-brand
+    {
+        margin-left: 50px;
+    }
+    .nav-brand h3
+    {
+        font-size: 1.3rem;
+    }
+    .nav-items ul li
+    {
+        margin: 15px 13px;
+        font-size: .9rem;
+    }
+    .nav-social ul li
+    {
+        margin: 0 10px;
+        font-size: 1rem;
+    }
+    nav .burger
+    {
+        margin-right: 50px;
+    }
+    .corousel .slide .content
+    {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        color: whitesmoke;
+    }
+    .corousel .content h2
+    {
+        font-size: 2.2rem;
+    }
+    .corousel .content p
+    {
+        font-size: 1.2rem;
+    }
+    .corousel .slide .content .book
+    {
+        width: 160px;
+        height: 50px;
+    }
+    .corousel .slide .content .book h4
+    {
+        line-height: 50px;
+        font-size: .9rem;
+    }
+    /* Places*/
+    .places .places-row
+    {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .places .place
+    {
+        width: 350px;
+        height: 350px;
+        margin: 30px auto 20px;
+    }
+    .places .place h3
+    {
+        font-size: 1rem;
+    }
+    .booking,.services-row
+    {
+        width:100%;
+        height:auto;
+        display: flex;
+        justify-content: center;
+        margin: 80px 0 40px;
+    }
+    .booking .same,.services .s-card
+    {
+        width: 200px;
+        height: 200px;
+        margin: 0 25px;
+    }
+    .booking .same .fa , .services .s-card .fa
+    {
+        font-size: .7rem;
+    }
+    .booking .same>h3 , .services .s-card>h3
+    {
+        font-size: .7rem;
+        line-height: .7rem;
+    }
+    .booking .same p , .services .s-card p , .blogs .blogs-row .b-card p,footer .f-card>p
+    {
+        font-size: .7rem;
+    }
+    .booking .same a , .services .s-card a
+    {
+        font-size: .8rem;  
+    }
+    .testimonials
+    {
+        padding: 60px 0;
+    }
+    .testimonials h2
+    {
+        margin: 0 0 60px;
+        font-size: 1.5rem;
+    }
+    .testimonials .t-card
+    {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        margin: 30px 0;
+    }
+    .testimonials .t-card .t-img
+    {
+        width: 350px;
+        height: 400px;
+    }
+    .testimonials .t-card .t-text
+    {
+        padding: 20px;
+        width: 300px;
+        height: 340px;
+        margin-top: 30px;
+        margin-left: -50px;
+    }
+    .testimonials .t-card .t-text h4
+    {
+        font-size: .9rem;
+    }
+    .testimonials .t-card .t-text #author
+    {
+        font-size: 1rem;
+    }
+
+
+
+    .destination , .services , .blogs
+    {
+        padding: 40px 0;
+    }
+    .destination .desti-row , .blogs-row
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .destination .desti-row .desti-card , .blogs .blogs-row .b-card
+    {
+        margin: 20px 10px;
+    }
+    .destination>h2 , .services>h2 , .blogs>h2 , .travel h2
+    {
+        font-size: 1.2rem;      
+    }
+    .destination>h3 , .services>h3 ,.blogs>h3
+    {
+        font-size: .9rem;
+    }
+    .destination .desti-row .desti-card img 
+    {
+        width: 300px;
+        height: 330px;
+    }
+    .destination .desti-row .desti-card h3
+    {
+        font-size: 1.1rem;
+    }
+    .destination .desti-row .desti-card p
+    {
+        font-size: .9rem;
+    }
+    .service-back
+    {
+        width: 100%;
+        height: 60vh;
+    }
+    .service-back .service-back-text
+    {
+        height: 20vh;
+        padding:  50px;
+    }
+    .service-back .service-back-text h1
+    {
+        font-size: 2rem;
+    }
+    .blogs .blogs-row .b-card
+    {
+        width: 70%;
+        margin: 40px 0px 0px;
+        text-align: left;
+    }
+    .blogs .blogs-row .b-card h3
+    {
+        font-size: 1rem;
+    }
+    .blogs .blogs-row .b-card h4
+    {
+        font-size: .8rem;
+    }
+    .blogs .blogs-row .b-card img
+    {
+        width: 520px;
+        height: 380px;
+    }
+    .blogs>a , .travel>a
+    {
+        padding: 10px 30px;
+    }
+    .travel
+    {
+        padding-bottom: 30px;
+    }
+    .travel>h2
+    {
+        font-size: 1.5rem;
+    }
+    footer
+    {
+        padding: 50px 50px 30px;
+    }
+    footer .f-card
+    {
+        width: 500px;
+    }
+    footer .f-card>h2
+    {
+        font-size: 1.2rem;
+    }
+    footer .f-card.subscribe button
+    {
+        padding: 0 10px;
+        display: inline-block;
+        margin-top: 20px;
+    }
+    }
+}
